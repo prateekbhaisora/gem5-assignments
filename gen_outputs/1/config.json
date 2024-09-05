@@ -22,7 +22,7 @@
         "m5ops_base": 0,
         "mem_mode": "timing",
         "mem_ranges": [
-            "0:536870912"
+            "0:8589934592"
         ],
         "memories": [
             "system.mem_ctrl.dram"
@@ -89,8 +89,8 @@
             "activity": 0,
             "backComSize": 5,
             "branchPred": {
-                "type": "TournamentBP",
-                "cxx_class": "gem5::branch_prediction::TournamentBP",
+                "type": "LocalBP",
+                "cxx_class": "gem5::branch_prediction::LocalBP",
                 "name": "branchPred",
                 "path": "system.cpu.branchPred",
                 "btb": {
@@ -119,11 +119,7 @@
                     },
                     "tagBits": 16
                 },
-                "choiceCtrBits": 2,
-                "choicePredictorSize": 8192,
                 "eventq_index": 0,
-                "globalCtrBits": 2,
-                "globalPredictorSize": 8192,
                 "indirectBranchPred": {
                     "type": "SimpleIndirectPredictor",
                     "cxx_class": "gem5::branch_prediction::SimpleIndirectPredictor",
@@ -143,7 +139,6 @@
                 },
                 "instShiftAmt": 2,
                 "localCtrBits": 2,
-                "localHistoryTableSize": 2048,
                 "localPredictorSize": 2048,
                 "numThreads": 1,
                 "ras": {
@@ -1307,7 +1302,7 @@
                     "name": "workload",
                     "path": "system.cpu.workload",
                     "cmd": [
-                        "/home/prateek/Desktop/IITD-Projects/gem5/configs/my_scripts/mm"
+                        "/home/prateek/Desktop/IITD-Projects/gem5/configs/my_scripts/bmm"
                     ],
                     "cwd": "/home/prateek/Desktop/IITD-Projects/gem5",
                     "drivers": [],
@@ -1349,7 +1344,7 @@
             "name": "cpu_clk_domain",
             "path": "system.cpu_clk_domain",
             "clock": [
-                1667
+                625
             ],
             "domain_id": -1,
             "eventq_index": 0,
@@ -1450,7 +1445,7 @@
                     "leaders": [],
                     "possible_states": []
                 },
-                "range": "0:536870912",
+                "range": "0:8589934592",
                 "ranks_per_channel": 2,
                 "read_buffer_size": 32,
                 "tAAD": 1250,

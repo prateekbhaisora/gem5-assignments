@@ -1,0 +1,6 @@
+Branch Predictor,Lookups Total,Taken Mispredicted,Not Taken Mispredicted,Predicted Branches,Predicted Taken Incorrect,Predicted Not Taken Incorrect,IEW Branch Mispredicts,Commit Branch Mispredicts
+LocalBP,6165032,19760,8576,5928257,19960,9094,29054,28682
+TournamentBP,6032382,14300,8692,5810786,14476,9276,23752,23415
+BiModeBP,6038057,14300,11867,5808384,14419,12824,27243,26717
+MultiperspectivePerceptronTAGE64KB,6122765,8470,555620,5877296,8663,7559,16222,15895
+TAGE,6031801,14441,8278,5807976,14664,8883,23547,23219
