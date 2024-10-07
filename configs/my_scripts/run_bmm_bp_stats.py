@@ -1,6 +1,6 @@
 import m5
-from m5.objects import *
 import os
+from m5.objects import *
 
 system = System()
 
@@ -26,7 +26,6 @@ system.cpu.icache_port = system.membus.cpu_side_ports
 system.cpu.dcache_port = system.membus.cpu_side_ports
 
 system.cpu.createInterruptController()
-
 system.cpu.interrupts[0].pio = system.membus.mem_side_ports
 system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
 system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports

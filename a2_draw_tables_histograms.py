@@ -71,7 +71,6 @@ def create_summary_table(data, output_dir):
     df = pd.DataFrame(data)
     output_path = os.path.join(output_dir, 'summary_table.csv')
     df.to_csv(output_path, index=False)
-    # print(df)
 
 def main():
     base_dir = './gen_outputs'
