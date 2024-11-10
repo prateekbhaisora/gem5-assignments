@@ -39,7 +39,7 @@ system.clk_domain.clock = "1GHz"
 system.clk_domain.voltage_domain = VoltageDomain()
 
 system.mem_mode = "timing"
-system.mem_ranges = [AddrRange("512MB")]
+system.mem_ranges = [AddrRange("8192MB")]
 system.cpu = RiscvTimingSimpleCPU()
 
 system.membus = SystemXBar()
@@ -59,8 +59,8 @@ system.system_port = system.membus.cpu_side_ports
 thispath = os.path.dirname(os.path.realpath(__file__))
 binary = os.path.join(
     thispath,
-    "../../../",
-    "tests/test-progs/hello/bin/riscv/linux/hello",
+    "../../../../",
+    "combination.o",
 )
 
 system.workload = SEWorkload.init_compatible(binary)

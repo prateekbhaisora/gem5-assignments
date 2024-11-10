@@ -557,6 +557,33 @@ decode QUADRANT default Unknown::unknown() {
             }
         }
 
+        0x1A: decode FUNCT3 {
+            format ROp {
+                0x0: decode FUNCT7 {
+                    0x01: comb({{
+                        int n = Rs1;        
+                        int r = Rs2;        
+                        int result = 1;
+
+                        if (r > n) {
+                            result = 0;
+                        } 
+                        else {
+                            if (r > n - r) {
+                                r = n - r;
+                            }                            
+                            for (int i = 0; i < r; i++) {
+                                result *= (n - i);      
+                                result /= (i + 1);      
+                            }
+                        }
+
+                        Rd = result; 
+                    }});
+                }
+            }
+        }
+
         0x01: decode FUNCT3 {
             format Load {
                 0x1: flh({{
